@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        form {
+            display: flex;
+            font: normal 15pt arial;
+        }
+
+        form input#entrada {
+            margin-left: 10px;
+            height: 15px;
+            margin-top: 20px;
+        }
+        
+        form input {
+            margin-left: 5px;
+            height: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    <form action="">
+        <p>Sua Nacionalidade: </p>
+        <input type="text" name="entrada" id="entrada">
+        <input type="button" value="Enviar" onclick="enviar()">
+    </form>
+    <div id="res"></div>
+    <script>
+        function enviar() {
+            var txtentrada = document.getElementById('entrada')
+            var txtres = document.getElementById('res')
+            var txtresposta = String(txtentrada.value)
+            txtres.innerHTML = `<p>Sua nacionalidade é <strong>${txtresposta}</strong>!!</p>`
+            if (txtresposta === 'Brasileiro' || txtresposta === 'brasileiro' || txtresposta === 'Brasileira' || txtresposta === 'brasileira') {
+                txtres.innerHTML += `<p>Você é <strong>${txtresposta}</strong>!</p>`
+            }
+        }
+    </script>
+</body>
+</html>
